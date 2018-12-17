@@ -14,7 +14,7 @@ import { MessageService } from '../messages/message.service';
                 </a>
             </span>
         </div>
-        <div *ngFor="let message of messageService.messages; let i=index">
+        <div *ngFor="let message of msj; let i=index">
             <div *ngIf="i<10" class="message-row">
                 {{ message }}
             </div>
@@ -25,11 +25,17 @@ import { MessageService } from '../messages/message.service';
     ]
 })
 export class MessageComponent {
+    public  msj: string[];
 
     constructor(private messageService: MessageService,
-                private router: Router) { }
+                private router: Router) {
+                    this.msj = this.messageService.messages;
+                 }
+
+
 
     close(): void {
-        // Close the popup.
+        this.router.navigate([{outlets:{popup: null}}]);
+        this.messageService.isDisplayed = false;
     }
 }
