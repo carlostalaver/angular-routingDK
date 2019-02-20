@@ -5,7 +5,7 @@
             <a class="navbar-brand">{{pageTitle}}</a>
             <ul class="nav navbar-nav">
                 <li routerLinkActive="active">
-                    <a [routerLink]="['/welcome']">Home</a>
+                    <a [routerLink]="['/welcome']">Home</a> <!-- tambien funcionarioa así -> <a routerLink="/welcome" -->
                 </li>
                 <li routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
                     <a [routerLink]="['/products']">Product List</a>

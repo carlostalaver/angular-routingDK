@@ -129,7 +129,6 @@ export class ProductEditComponent  implements OnInit{
     }
 
     isValid(path: string): boolean {
-        console.log('llamando a isValid');
         this.validate();
         if (path) {
             return this.dataIsValid[path];
@@ -139,7 +138,6 @@ export class ProductEditComponent  implements OnInit{
     }
 
     validate(): void {
-        console.log('llamando a validate');
         this.dataIsValid = {};
 
         //tag 'info'
